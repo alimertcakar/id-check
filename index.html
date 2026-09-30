@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ID Name Check</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/tesseract.min.js"
+          integrity="sha384-2BQ3U3OdKOb0Uczxqr41I9UvZkzr4V9Hv8uSzMMZAlmhsFClvdZX5wi5fDCzG+tM"
+          crossorigin="anonymous"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <h1>ID name check</h1>
+    <p class="intro">Enter a name and an ID picture. The picture is read in your browser and never uploaded.</p>
+
+    <form id="check-form">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Full name as on the ID">
+      </div>
+
+      <div class="field">
+        <label for="image">ID image</label>
+        <input id="image" name="image" type="file" accept="image/*" required>
+        <p id="image-note" class="note" hidden></p>
+        <img id="preview" alt="Selected ID image" hidden>
+      </div>
+
+      <button id="submit" type="submit">Check name</button>
+    </form>
+
+    <p id="status" class="status" role="status"></p>
+
+    <div id="result" class="result" hidden></div>
+
+    <section id="ocr-output" class="ocr-output" hidden>
+      <h2>Text read from the image</h2>
+      <pre id="ocr-text"></pre>
+    </section>
+  </main>
+</body>
+</html>
