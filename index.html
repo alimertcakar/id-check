@@ -16,24 +16,26 @@
     <p class="intro">Enter a name and an ID picture. The picture is read in your browser and never uploaded.</p>
 
     <form id="check-form">
-      <div class="field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Full name as on the ID">
-      </div>
+      <fieldset id="fields">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" placeholder="Full name as on the ID">
+        </div>
 
-      <div class="field">
-        <label for="image">ID image</label>
-        <input id="image" name="image" type="file" accept="image/*" required>
-        <p id="image-note" class="note" hidden></p>
-        <img id="preview" alt="Selected ID image" hidden>
-      </div>
+        <div class="field">
+          <label for="image">ID image</label>
+          <input id="image" name="image" type="file" accept="image/*" required>
+          <p id="image-note" class="note" hidden></p>
+          <img id="preview" alt="Selected ID image" hidden>
+        </div>
 
-      <button id="submit" type="submit">Check name</button>
+        <button id="submit" type="submit">Check name</button>
+      </fieldset>
     </form>
 
     <p id="status" class="status" role="status"></p>
 
-    <div id="result" class="result" hidden></div>
+    <div id="result" class="result" aria-live="polite" hidden></div>
 
     <section id="ocr-output" class="ocr-output" hidden>
       <h2>Text read from the image</h2>
